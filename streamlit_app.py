@@ -26,5 +26,5 @@ fv_resp = requests.get("https://fruityvice.com/api/fruit/{}".format(f_c))
 
 fv_norm = pandas.json_normalize(fv_resp.json())
 
-streamlit.text(fv_norm)
+streamlit.dataframe(fv_norm)
 
