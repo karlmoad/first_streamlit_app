@@ -18,7 +18,12 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)
 
-fv_resp = requests.get("https://fruityvice.com/api/fruit/watermelon")
+
+streamlit.header("Fruityvice Fruit Advice~")
+f_c = streamlit.text_input('What fruit woudl you like information about?'. 'Kiwi')
+streamlit.write('Entered:', f-c)
+
+fv_resp = requests.get("https://fruityvice.com/api/fruit/{}".format(f_c))
 
 streamlit.text(fv_resp)
 
