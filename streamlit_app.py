@@ -6,7 +6,7 @@ import snowflake.connector
 conn = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 cur = conn.cursor()
 
-cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
+cur.execute("SELECT * FROM PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST")
 my_data_row = cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
